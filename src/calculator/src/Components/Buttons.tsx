@@ -53,6 +53,7 @@ const _handleOperator = (operator : string) => {
         _changeResult(`${expression.slice(0,lastIndex)}${operator}`);
     } else {
             if(isEqualpressed === false  ){
+                // eslint-disable-next-line
                 let temp:number = eval(`${expression}`);
                 let temps:string = temp.toString();
                 _changeResult(`${temps}${operator}`);
@@ -73,10 +74,12 @@ const _handleOperator = (operator : string) => {
  const _handleEqualSign = ()=> {
     const lastIndex = expression.length-1;
     if(!operators.includes(expression[lastIndex] )&& !isEqualpressed ) {
-        let  temp = eval(`${expression}`);
-        _changeResult(temp);
-        setExpression(temp);
+        // eslint-disable-next-line
+        let  temp :number = eval(`${expression}`);
+        _changeResult(temp.toString());
+        setExpression(temp.toString());
         setIsEqualpressed(true);
+        if(!temp.toString().includes("."))
         setIsDotPressed(false);
     }
  }
@@ -127,7 +130,7 @@ const _handleOperator = (operator : string) => {
                 }
             <button className ="clear-btn"
              onClick={() => _handleClick("clear")}
-            >CLEAR
+             >CLEAR
             </button>
 
         </div>

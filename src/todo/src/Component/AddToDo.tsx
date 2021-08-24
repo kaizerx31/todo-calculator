@@ -14,9 +14,6 @@ const AddTodo = ({setIsLoggedIn ,isLoggedIn}:Homeprops) => {
         title.trim() ? dispatch(_addTodo(title)):alert(error);
         setTitle('');
     }
-    const _handlelogout = () => {
-        setIsLoggedIn(false);
-    }
 
     return (
         <div className="add-todo">
@@ -28,7 +25,6 @@ const AddTodo = ({setIsLoggedIn ,isLoggedIn}:Homeprops) => {
                 /> 
                 <button>Add Task</button>
             </form>
-            <button onClick={_handlelogout}>Logout</button>
         </div>
     )
 }

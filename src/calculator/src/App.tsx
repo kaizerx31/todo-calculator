@@ -9,17 +9,10 @@ import "./styles.css";
 
 export const App = ({setIsLoggedIn , isLoggedIn}:Homeprops) => {
 
-
-  const _handleClick = ()=> {
-    setIsLoggedIn(false);
- }
-
   const [result, setResult] = useState("0");
 
   const _changeResult = (newResult : string) => {
-        //console.log("newResult",newResult);
         setResult(newResult);
-        //console.log(result);
   }
 
   return (
@@ -34,7 +27,6 @@ export const App = ({setIsLoggedIn , isLoggedIn}:Homeprops) => {
                      result={result}
             />
           </div>
-          <button onClick= {_handleClick}>Log out</button>
           {!isLoggedIn && <Redirect to="/login"/>}
     </div>
   )

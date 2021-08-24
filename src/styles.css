@@ -34,10 +34,10 @@ a {
     text-decoration:none;
 }
 
-.Header > h1 {
-    width:50%;
-    margin: auto;
-    text-align: center;
+.Header  {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
 }
 .logout-button {
     margin-top: 20px;
