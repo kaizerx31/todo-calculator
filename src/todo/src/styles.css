@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+   
+}
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+}
+
+h1 {
+    font-family: 'Inter', sans-serif;
+}
+
+.todo-app {
+    margin-top: 1em;
+    width: 600px;
+    margin-left:auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+}
+
+.add-div {
+    width: 100%;
+    text-align: center;
+}
+
+.add-div >input[type=text] {
+    width: 25em;
+    height: 2em;
+    margin: 20px;
+}
+
+/* input[type=checkbox] {
+    width: 10em;
+    height: 2em;
+} */
+.todo-checkbox {
+    width: 10em;
+    height: 2em;
+}
+
+.add-div >button {
+    height: 2.5em;
+}
+
+.Todo-List {
+    list-style-type: circle;
+    width: 600px;
+    margin: auto;
+    display: grid;
+    align-items: center;
+    justify-self: space-between;
+    text-align: left;
+}
+
+.Todo-List >li {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0.2em auto;
+    cursor: pointer;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+.Filter-btns {
+    width: 80%;
+    margin: 1.2em auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.add-todo {
+    display:flex;
+    justify-content: space-evenly;
+    height:2.5em;
+    align-items: center;
+}
+.add-todo> button {
+  margin-left: 20px;
+}

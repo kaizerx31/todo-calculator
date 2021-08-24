@@ -1,0 +1,46 @@
+.login {
+    display :flex;
+    flex-direction: column;
+    width:300px;
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+}
+.loginContainer {
+    display :flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:20vh;
+}
+
+.login >input {
+    margin-bottom: 8px;
+    width:200px;
+}
+
+.Header >button {
+    width:85px;
+}
+
+
+.navigationBar {
+    list-style: none;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+a {
+    text-decoration:none;
+}
+
+.Header > h1 {
+    width:50%;
+    margin: auto;
+    text-align: center;
+}
+.logout-button {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}

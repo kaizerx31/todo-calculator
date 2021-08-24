@@ -1,25 +1,52 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Home from './pages/Home';
+import Calculator  from "./calculator/src/App"
+import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom"
+import About from './pages/About';
+import { useState } from 'react';
+import Login from './pages/Login';
+import "./styles.css";
+import NotFound from './pages/NotFound';
+import ToDo from './todo/src/index';
+
 
 function App() {
+  const [isLoggedIn,setIsLoggedIn] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+         <Switch>
+              <Route path ="/login" >
+                  <Login setIsLoggedIn={setIsLoggedIn}
+                        isLoggedIn={isLoggedIn}
+                  />
+              </Route>
+
+              <Route path ="/"  exact>
+                {isLoggedIn?<Home setIsLoggedIn={setIsLoggedIn}
+                                  isLoggedIn={isLoggedIn}
+                            /> : <Redirect to="/login"/>}
+              </Route>
+
+              <Route path ="/about" >
+                {isLoggedIn?<About/> : <Redirect to="/login"/>}
+              </Route>
+
+              <Route path = "/calculator">
+                {isLoggedIn?<Calculator setIsLoggedIn={setIsLoggedIn}
+                                  isLoggedIn={isLoggedIn}
+                            /> : <Redirect to="/login"/>}
+              </Route>
+
+              <Route path = "/todo">
+                {isLoggedIn?<ToDo setIsLoggedIn={setIsLoggedIn}
+                                  isLoggedIn={isLoggedIn}
+                            /> : <Redirect to="/login"/>}
+              </Route>
+
+              <Route component ={NotFound}/>  
+         </Switch>
+     </BrowserRouter>
+
   );
 }
 
